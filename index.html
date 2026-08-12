@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khaled Bin Saifullah — Cybersecurity Analyst</title>
+<meta name="description" content="Cybersecurity Analyst — alert triage, threat detection, and detection engineering." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #0F1520;
+    --surface: #171F2B;
+    --surface-2: #1D2733;
+    --border: #2A3648;
+    --text: #E8EDF3;
+    --muted: #8D9AAC;
+    --accent: #4FA8D8;
+    --accent-warm: #E0A458;
+    --font-display: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+    --max: 880px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(79,168,216,0.4); }
+  a:hover { text-decoration-color: var(--accent); }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(15,21,32,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: var(--max); margin: 0 auto; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.08em;
+    color: var(--text); text-decoration: none; font-weight: 500;
+  }
+  nav.site-nav { display: flex; gap: 24px; }
+  nav.site-nav a {
+    font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.02em;
+  }
+  nav.site-nav a:hover { color: var(--text); }
+
+  @media (max-width: 640px) {
+    nav.site-nav { display: none; }
+  }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.12em;
+    color: var(--accent); margin: 0 0 18px; text-transform: uppercase;
+  }
+  h1.name {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4.25rem); line-height: 1.05;
+    margin: 0 0 14px; letter-spacing: -0.02em;
+  }
+  .role-line {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(1.1rem, 2.6vw, 1.4rem); color: var(--muted);
+    margin: 0 0 28px;
+  }
+  .value-prop { max-width: 560px; font-size: 1.05rem; color: var(--text); margin: 0 0 28px; }
+  .status-line {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12.5px; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 100px;
+    padding: 8px 16px; margin: 0 0 36px;
+  }
+  .status-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-warm); box-shadow: 0 0 0 3px rgba(224,164,88,0.18);
+    flex-shrink: 0;
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--font-display); font-weight: 600; font-size: 14.5px;
+    padding: 13px 22px; border-radius: 8px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 150ms ease, border-color 150ms ease;
+  }
+  .btn-primary { background: var(--accent); color: var(--bg); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  /* Sections generic */
+  section { padding: 64px 0; border-top: 1px solid var(--border); }
+  h2.section-title {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 0 0 20px; letter-spacing: -0.01em;
+  }
+
+  /* About */
+  .about p { max-width: 640px; font-size: 1.02rem; }
+  .about p + p { margin-top: 14px; }
+
+  /* Tools */
+  .tag-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag {
+    font-family: var(--font-mono); font-size: 13px; color: var(--text);
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 9px 14px; border-radius: 6px;
+  }
+
+  /* Lab */
+  .stat-row { font-family: var(--font-mono); font-size: 13.5px; color: var(--muted); margin: 0 0 32px; }
+  .stat-row strong { color: var(--text); font-weight: 600; }
+  .chain {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin: 0 0 32px; padding: 24px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 100px;
+  }
+  .chain-node {
+    font-family: var(--font-mono); font-size: 12.5px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 12px; white-space: nowrap;
+  }
+  .chain-node .count { color: var(--accent); font-weight: 600; margin-left: 5px; }
+  .chain-arrow { color: var(--border); font-size: 14px; }
+
+  .lab-desc { max-width: 640px; margin: 0 0 14px; }
+  .lab-desc.second { color: var(--muted); font-size: 0.95rem; }
+
+  .highlight {
+    border: 1px solid rgba(224,164,88,0.35); background: rgba(224,164,88,0.06);
+    border-radius: 10px; padding: 20px 22px; margin: 28px 0 32px;
+  }
+  .highlight .h-label {
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em;
+    color: var(--accent-warm); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .highlight p { margin: 0; font-size: 0.98rem; }
+
+  /* Footer / contact */
+  footer#contact { border-top: 1px solid var(--border); padding: 64px 0 48px; }
+  .contact-list { list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 14px; }
+  .contact-list a { font-family: var(--font-mono); font-size: 15px; }
+  .contact-list .label { color: var(--muted); font-family: var(--font-mono); font-size: 12px; display: block; margin-bottom: 2px; }
+  .fine-print { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn:hover { transform: none; }
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 64px 0 48px; }
+    section { padding: 48px 0; }
+    .chain { padding: 16px; border-radius: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="#top" class="brand">KHALED BIN SAIFULLAH</a>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#lab">Lab</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow">Cybersecurity Analyst</p>
+    <h1 class="name">Khaled Bin Saifullah</h1>
+    <p class="role-line">Alert Triage &amp; Detection Engineering</p>
+    <p class="value-prop">Catching real threats in the logs — and building the detections myself instead of waiting on a vendor alert.</p>
+    <div class="status-line"><span class="status-dot" aria-hidden="true"></span> open to L2 SOC Analyst roles · New York · hybrid / onsite / remote</div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/KBS320/SOC-Home-Lab" target="_blank" rel="noopener">View the Detection Lab →</a>
+      <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
+  <section id="about" class="about wrap">
+    <h2 class="section-title">About</h2>
+    <p>Cybersecurity Analyst focused on alert triage and threat detection. Daily hands-on experience in Splunk, CrowdStrike, Cortex XSOAR, Tenable, Prisma Cloud, and open-source SIEM/EDR detection engineering.</p>
+  </section>
+
+  <section id="tools" class="tools wrap">
+    <h2 class="section-title">Tools &amp; Technologies</h2>
+    <div class="tag-grid">
+      <span class="tag">Splunk</span>
+      <span class="tag">CrowdStrike</span>
+      <span class="tag">Cortex XSOAR</span>
+      <span class="tag">Tenable</span>
+      <span class="tag">Prisma Cloud</span>
+      <span class="tag">Wazuh</span>
+      <span class="tag">Suricata</span>
+      <span class="tag">Atomic Red Team</span>
+      <span class="tag">MITRE ATT&amp;CK</span>
+    </div>
+  </section>
+
+  <section id="lab" class="lab wrap">
+    <p class="eyebrow">Featured Project</p>
+    <h2 class="section-title">SOC Detection Lab</h2>
+    <p class="stat-row"><strong>30</strong> techniques · <strong>2</strong> labs · <strong>8</strong> ATT&amp;CK tactics, Discovery → Impact</p>
+
+    <div class="chain" role="img" aria-label="MITRE ATT&CK tactics covered, in attack order: Discovery 14, Execution 2, Persistence 3, Defense Evasion 4, Command and Control 1, Collection 3, Exfiltration 1, Impact 2">
+      <div aria-hidden="true" style="display:contents">
+        <span class="chain-node">Discovery<span class="count">14</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">Execution<span class="count">2</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">Persistence<span class="count">3</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">Defense Evasion<span class="count">4</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">C2<span class="count">1</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">Collection<span class="count">3</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">Exfiltration<span class="count">1</span></span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-node">Impact<span class="count">2</span></span>
+      </div>
+    </div>
+
+    <p class="lab-desc">Every technique simulated by hand with Atomic Red Team and caught with a custom-built Splunk detection — no pre-built alerts, no guided walkthroughs.</p>
+    <p class="lab-desc second">A second lab builds the plumbing: a fully TLS-encrypted Suricata → Wazuh → Filebeat → Elasticsearch → Kibana pipeline, verified end to end with a live signature hit.</p>
+
+    <div class="highlight">
+      <p class="h-label">Strongest find</p>
+      <p>Tuned a custom Wazuh rule to catch process injection (T1055) — then found a bypass in my own rule while stress-testing it.</p>
+    </div>
+
+    <a class="btn btn-secondary" href="https://github.com/KBS320/SOC-Home-Lab" target="_blank" rel="noopener">View full writeups on GitHub →</a>
+  </section>
+</main>
+
+<footer id="contact" class="wrap">
+  <h2 class="section-title">Get in Touch</h2>
+  <ul class="contact-list">
+    <li><span class="label">GitHub</span><a href="https://github.com/KBS320" target="_blank" rel="noopener">github.com/KBS320</a></li>
+    <li><span class="label">YouTube</span><a href="https://youtube.com/@KhaledSec" target="_blank" rel="noopener">youtube.com/@KhaledSec</a></li>
+  </ul>
+  <p class="fine-print">© 2026 Khaled Bin Saifullah</p>
+</footer>
+
+</body>
+</html>
